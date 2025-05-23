@@ -71,10 +71,51 @@ def agregar_producto():
 
 
 def sacar_producto():
-    pass
+    
+    seguir = "s"
+
+    while seguir == "s":
+        producto_eliminar = input("ingrese el nombre del producto que desea quitar: ")
+
+        encontre = False
+        for i in range(len(matriz)):
+            for j in range(len(matriz[i])):
+                if matriz[i][j][0] == producto_eliminar: 
+                    matriz[i][j] = [" ", 0]
+                    print(f"se quito el producto:  {producto_eliminar}")
+                    encontre = True
+        if encontre == False:
+            print("no esta ese producto", producto_eliminar )
+
+        seguir = input("desea seguir quitando productos? s/n ")
+
+
+
+
+
+
+
 
 def modificar_producto():
-    pass
+    seguir = 's'
+    while seguir == 's':
+        producto_modificar =  input("producto que decea modificar: ")
+
+        mod_encontrado = False
+        for i in range(len(matriz)):
+            for j in range(len(matriz[i])):
+                if matriz[i][j][0] == producto_modificar:
+                    nuevo_cantidad =  int(input("ingrese el nuevo producto que desea modificar: "))
+                    nueva_hubicacion_fila = int(input("ingrese la nueva hubicacion fila: ")) 
+                    nueva_hubicacion_columbna = int(input("ingrese la nueva hubicacion colubna: "))
+                    matriz[i][j] = matriz[nueva_hubicacion_fila][nueva_hubicacion_columbna][nuevo_cantidad]
+                    mod_encontrado = True
+        if mod_encontrado == False:
+            print("no se encontro el producto") 
+
+
+
+
 
 def lista_productos():
     pass
