@@ -17,26 +17,27 @@
 # Todo debe estar claramente comentado/documentado.
 
 #datos iniciales  
-producto = ["A","B","C"]
+producto = ["A","B","C"] #lista con nombres de productos 
+ventas = [               #matriz con las ventas trimestrales por producto
+        [50, 60, 70], #A
+        [80, 55, 45], #B
+        [40, 65, 75]  #C
+           ] 
 # ventas = [
-#         [50, 60, 70], #A
-#         [80, 55, 45], #B
-#         [40, 65, 75]  #C
+#         [5, 60, 70], #A
+#         [8, 60, 45], #B
+#         [4, 65, 60]  #C
 #           ] 
-ventas = [
-        [5, 60, 70], #A
-        [8, 60, 45], #B
-        [4, 65, 60]  #C
-          ] 
 
 
 
 
 
 def menu_opciones():
+    '''muestra el menu de opciones y ejecuta la opción seleccionada por el usuario. '''
     seleccionar = 0
     while seleccionar != 5: 
-        print(" MENU DE OPCIONES ")
+        print(" MENU DE OPCIONES ") 
         print("1 mostrar productos y ventas")
         print("2 ordenar productos por ventas anuales(desc)")
         print("3 buscar producto por nombre")
@@ -49,15 +50,15 @@ def menu_opciones():
     
         match seleccionar:
             case 1:
-                mostrar_productos_ventas()
+                mostrar_productos_ventas() #muestra los productos y ventas.
             case 2:
-                ordenar_productos_por_ventas_anuales() #descendente
+                ordenar_productos_por_ventas_anuales() #ordena los productos de manera desendente por ventas anuales.
             case 3:
-                buscar_producto_por_nombre()
+                buscar_producto_por_nombre() #busca los productos por nombre 
             case 4:
-                buscar_monto_de_venta_en_matriz()
+                buscar_monto_de_venta_en_matriz() #busca un monto en la matriz 
             case 5:
-                salir()
+                salir() #salis del programa
 
 
 def mostrar_productos_ventas():
@@ -70,7 +71,7 @@ def mostrar_productos_ventas():
 
 
 def ordenar_productos_por_ventas_anuales():
-    ''''ordena según el total anual de ventas (de mayor a menor).'''
+    '''ordena según el total anual de ventas (de mayor a menor).'''
     totales = [0] * len(ventas)
     
     for i in range(len(ventas)):
@@ -120,13 +121,13 @@ def buscar_monto_de_venta_en_matriz():
                 print(f"el producto es: {producto[i]} y el trimestre es {j + 1}")
                 encontrado = True
                
-    if encontrado == False:    
-        '''sale del programa.'''    
-        print("no se encontro el monto")
+    if encontrado == False:       
+        print(f"el monto: {monto_buscado}, no se encontro")
 
 
 def salir():
+    '''sale del programa.''' 
     print("Saliste del menu de opciones")
 
-
+#invocacion del menu principal
 menu_opciones()

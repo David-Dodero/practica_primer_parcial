@@ -8,7 +8,7 @@
 
 matriz = [
         [[" ",0],["botellas",3],[" ",0],["frascos",4],[" ",0]],
-        [[" ",0],[" ",0],[" fideos",4],[" ",0],[" ",0],],
+        [[" ",0],[" ",0],["fideos",4],[" ",0],[" ",0],],
         [[" ",0],[" ",0],[" ",0],["leches",6],[" ",0]]
         ]
 
@@ -23,24 +23,33 @@ matriz = [
 
 
 def menu_opciones():
+    seleccionar = 0
+    while seleccionar != 6:
+        print("MENU DE OPCIONES")
+        print("1-Alta de productos (producto nuevo)")
+        print("2-Baja de productos (producto existente)")
+        print("3-Modificar productos (cantidad, ubicación)")
+        print("4-Listar productos")
+        print("5-Lista de productos ordenado por nombre")
+        print("6-Salir")
 
-    seleccionar = int(input("ingrese un numero del 1 a 6: "))
-    while seleccionar < 1 or seleccionar > 6:
         seleccionar = int(input("ingrese un numero del 1 a 6: "))
+        while seleccionar < 1 or seleccionar > 6:
+            seleccionar = int(input("ingrese un numero del 1 a 6: "))
     
-    match seleccionar:
-        case 1:
-            agregar_producto()
-        case 2:
-            sacar_producto()
-        case 3:
-            modificar_producto()
-        case 4:
-            lista_productos()
-        case 5:
-            lista_ordenada_por_nombre()
-        case 6:
-            salir()
+        match seleccionar:
+            case 1:
+                agregar_producto()
+            case 2:
+                sacar_producto()
+            case 3:
+                modificar_producto()
+            case 4:
+                lista_productos()
+            case 5:
+                lista_ordenada_por_nombre()
+            case 6:
+                salir()
 
 
 
@@ -73,7 +82,6 @@ def agregar_producto():
 def sacar_producto():
     
     seguir = "s"
-
     while seguir == "s":
         producto_eliminar = input("ingrese el nombre del producto que desea quitar: ")
 
@@ -118,13 +126,36 @@ def modificar_producto():
 
 
 def lista_productos():
-    pass
+    
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            print(matriz[i][j], end= " ")
+        print("")
 
 def lista_ordenada_por_nombre():
-    pass
+    lista_nueva = []
 
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] != [" ",0]:
+                lista_nueva += [matriz[i][j]]
+
+    for i in range(len(lista_nueva)-1):
+        for j in range(1+i, len(lista_nueva)):
+            if lista_nueva [i][0] > lista_nueva[j][0]:
+                aux = lista_nueva[i]
+                lista_nueva[i] = lista_nueva[j]
+                lista_nueva[j] = aux
+    
+    for producto in lista_nueva:
+        print(f"producto: {producto[0]}, cantidad: {producto[1]}")
+
+
+
+
+            
 def salir():
-    pass
+    print("Saliste del menu de opciones")
 
 
 menu_opciones()
