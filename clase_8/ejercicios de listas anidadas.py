@@ -113,14 +113,20 @@ def modificar_producto():
         for i in range(len(matriz)):
             for j in range(len(matriz[i])):
                 if matriz[i][j][0] == producto_modificar:
-                    nuevo_cantidad =  int(input("ingrese el nuevo producto que desea modificar: "))
-                    nueva_hubicacion_fila = int(input("ingrese la nueva hubicacion fila: ")) 
-                    nueva_hubicacion_columbna = int(input("ingrese la nueva hubicacion colubna: "))
-                    matriz[i][j] = matriz[nueva_hubicacion_fila][nueva_hubicacion_columbna][nuevo_cantidad]
-                    mod_encontrado = True
+                    nueva_ubicacion_fila = int(input("ingrese la nueva ubicacion fila: ")) 
+                    nueva_ubicacion_columna = int(input("ingrese la nueva ubicacion columna: "))
+                    if matriz[nueva_ubicacion_fila][nueva_ubicacion_columna] == [" ",0]:                        
+                        nuevo_cantidad =  int(input("ingrese la cantidad: "))
+                        matriz[nueva_ubicacion_fila][nueva_ubicacion_columna] = [producto_modificar, nuevo_cantidad] 
+                        matriz[i][j] = [" ", 0]
+                        print(f"el producto {producto_modificar} fue modificado correctamente")
+                        mod_encontrado = True
+                    else:
+                        print("el lugar esta ocupado")    
         if mod_encontrado == False:
             print("no se encontro el producto") 
 
+        seguir = input("desea seguir modificando? s/n")
 
 
 
