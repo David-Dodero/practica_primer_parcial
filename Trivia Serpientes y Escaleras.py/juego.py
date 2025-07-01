@@ -30,17 +30,12 @@ def jugar():
     while jugar_respuesta != "s" and jugar_respuesta != "n":
         jugar_respuesta = input("Error. ¿Querés jugar? (s/n): ").lower()
 
-    if jugar_respuesta != "s":
+    if jugar_respuesta  == "n":
         print("Fin del juego.") 
         return
 
 
 
-    # jugar_respuesta = input("quiero jugar? s/n ").lower()
-    # if  jugar_respuesta != "s" :
-    #     print("fin del juego")
-    #     return
-        
     preguntas_disponibles = preguntas.copy()
     seguir_jugando = True
 
@@ -58,7 +53,7 @@ def jugar():
         
         seguir_jugando = verificar_estado(posicion, tablero, nombre)
     
-    with open("Score.csv", "a") as archivo: #Comma Separated Values (valores separados por coma)
+    with open("Score.csv", "a") as archivo: #Comma Separated Values (valores separados por coma) #El modo "a" significa "append", es decir: agrega al final del archivo sin borrar lo anterior
         archivo.write(f"{nombre}, {posicion + 1}\n") #.write() escribe texto en el archivo
 
     print("puntajes guardados: ")    
