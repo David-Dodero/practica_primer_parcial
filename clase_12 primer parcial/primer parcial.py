@@ -19,7 +19,7 @@
 #datos iniciales  
 producto = ["A","B","C"] #lista con nombres de productos 
 ventas = [               #matriz con las ventas trimestrales por producto
-        [50, 60, 70], #A
+        [50, 65, 70], #A
         [80, 55, 45], #B
         [40, 65, 75]  #C
            ] 
