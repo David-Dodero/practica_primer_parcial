@@ -109,7 +109,7 @@ print(resultado)  # Muestra el resultado en pantalla
 #     return resultado
 
 # Llamada a la función con parámetros reales
-entrada = [10, 20, 30, 40]  # Lista de números (parámetro real)
+entrada = [10, 20, 30, 40]  # Lista de números (parámetro real)acuales
 valor = 24                  # Valor con el que se compara el promedio (parámetro real)
 
 def calcular_promedio(lista, valor):

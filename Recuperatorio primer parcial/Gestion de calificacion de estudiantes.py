@@ -137,9 +137,8 @@ def buscar_calificacion_de_estudiante():
 def salir():
     """
     Muestra un mensaje de salida del programa.
-    Parámetros formales: ninguno.
     """
     print("Saliste del menú de opciones.")
 
-
+#invocacion de la funcion 
 menu_gestion_estudiantes()

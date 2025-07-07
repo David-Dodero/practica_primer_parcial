@@ -172,8 +172,32 @@ entrada = [10,20,30,40]
 valor = 24
 #salida esperada true
 
-def calcular_promedio(lista,valor):
+def calcular_promedio(lista,valor): #parametro reales 
+    """
+    calcula el promedio de una lista y si retorna un true si el promedio es mayor a un valor o false si es menor 
+
+    parametros: 
+        lista (list): lista de numeros a promediar 
+        valor (int): numero a comparar con el promedio de la lista 
+
+    retorna: 
+        bool: true si el valor es mayor, false si el valor es menor
+    """
     suma = 0 
     for i in range(len(lista)):
         suma += lista[i] 
+    promedio =suma / len(lista)
+
+    if promedio > valor:
+        resultado = True
+    else:
+        resultado = False
+    
+    return resultado
+
+#invocacion de la funcion 
+print(calcular_promedio(entrada, valor))
+
+
+
         

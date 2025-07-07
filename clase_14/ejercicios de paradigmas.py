@@ -24,6 +24,14 @@ def filtrar_por_categoria(lista, categoria):
             filtrados.append(producto)
     return filtrados
 
+#con key es mas generico 
+# def filtrar_por_key(lista, key, valor):
+#     filtrados = []
+#     for producto in lista:
+#         if producto[key] == valor:
+#             filtrados.append(producto)
+#     return filtrados
+
 # producto_tecnologia = filtrar_por_categoria(productos,"tecnología")
 # print(f"los productos de tecnologia son {producto_tecnologia}")
 

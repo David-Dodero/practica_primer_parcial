@@ -140,7 +140,7 @@ def mostrar_puntajes():
     Retorna:
         No retorna ningun valor
     """
-    archivo = open("Score.csv", "r")
+    archivo = open("Score.csv", "r") #Abre el archivo en modo lectura: "r" solo va a leer el contenido
     for puntajes in archivo:
         print(puntajes)
     archivo.close()

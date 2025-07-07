@@ -53,7 +53,7 @@ def jugar():
         
         seguir_jugando = verificar_estado(posicion, tablero, nombre)
     
-    with open("Score.csv", "a") as archivo: #Comma Separated Values (valores separados por coma) #El modo "a" significa "append", es decir: agrega al final del archivo sin borrar lo anterior
+    with open("Score.csv", "a") as archivo: #Comma Separated Values (valores separados por coma) #El modo "a" significa "append", es decir: agrega al final del archivo todo lo que escribas sin borrar lo anterior 
         archivo.write(f"{nombre}, {posicion + 1}\n") #.write() escribe texto en el archivo
 
     print("puntajes guardados: ")    

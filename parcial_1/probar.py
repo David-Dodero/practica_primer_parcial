@@ -43,5 +43,6 @@ def calcular_promedio(lista,valor):
     
     return resultado
 
+
 print(calcular_promedio(entrada, valor))
 
