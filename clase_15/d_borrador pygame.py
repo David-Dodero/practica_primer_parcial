@@ -35,7 +35,7 @@ while escribiendo_nombre:
     pantalla.blit(titulo, (100, 150))
 
     # Cuadro de texto
-    pygame.draw.rect(pantalla, BLANCO, (100, 200, 600, 50),5)
+    pygame.draw.rect(pantalla, BLANCO, (100, 200, 600, 50),2)
 
     # Mostrar lo que el jugador va escribiendo
     entrada = fuente.render(nombre, True, BLANCO)

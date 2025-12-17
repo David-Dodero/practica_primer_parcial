@@ -35,8 +35,8 @@ while esperando_respuesta: #Este while sólo se detiene cuando esperando_respues
                 esperando_respuesta = False  # Ya no esperamos más la respuesta y salimos del while
             # Si no es "s" o "n", no cambia nada y sigue esperando
  # Si presionó otra tecla (por ejemplo: a, t)
-    # → no entra en ningún `if`, y la variable `esperando_respuesta` sigue siendo True
-    # → entonces el while no termina y volvemos a mostrar la pregunta
+    #  no entra en ningún `if`, y la variable `esperando_respuesta` sigue siendo True
+    #  entonces el while no termina y volvemos a mostrar la pregunta
 
 
 
@@ -44,7 +44,7 @@ while esperando_respuesta: #Este while sólo se detiene cuando esperando_respues
     texto = fuente.render("Queres jugar? (s/n)", True, BLANCO)
     pantalla.blit(texto, (200, 250))
     pygame.display.update()
-
+ 
 #Si no quiere jugar, termina
 if jugar_confirmado == False:
     pantalla.fill(VIOLETA_VACIO)
@@ -61,34 +61,23 @@ def guardar_puntaje(nombre, posicion_jugador):
         archivo.write(f"{nombre}, {posicion_jugador + 1}\n")
 
 
-def mostrar_puntajes_pygame(pantalla, puntajes):
+    
+def mostrar_puntajes_pygame(pantalla):
     pantalla.fill(VIOLETA_VACIO)
+
     fuente = pygame.font.SysFont("Arial Narrow", 28)
     y = 50
 
-    for nombre, puntaje in puntajes:
-        texto = fuente.render(f"{nombre}: {puntaje}", True, BLANCO)
+    archivo = open("Score.csv", "r")
+    for linea in archivo:
+        
+        texto = fuente.render(linea, True, BLANCO)  
         pantalla.blit(texto, (50, y))
         y += 30
+    archivo.close()
 
     pygame.display.update()
-    pygame.time.wait(5000)    
-# def mostrar_puntajes_pygame(pantalla):
-#     pantalla.fill(VIOLETA_VACIO)
-
-#     fuente = pygame.font.SysFont("Arial Narrow", 28)
-#     y = 50
-
-#     archivo = open("Score.csv", "r")
-#     for linea in archivo:
-        
-#         texto = fuente.render(linea, True, BLANCO)  
-#         pantalla.blit(texto, (50, y))
-#         y += 30
-#     archivo.close()
-
-#     pygame.display.update()
-#     pygame.time.wait(5000)
+    pygame.time.wait(5000)
 
 def jugar(pantalla, tablero, posicion_jugador):
     nombre = "" # Variable para almacenar el nombre del jugador 

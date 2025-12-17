@@ -54,7 +54,7 @@
 #     pygame.draw.circle(pantalla, AMARILLO, (centro_x, centro_y), 10)
 # # - pantalla: dónde dibujar - AMARILLO: color de la ficha - (centro_x, centro_y): posición en pantalla (centro de la casilla) - 10: radio del círculo
 
-from preguntas2 import*
+
 import pygame
 
 pygame.init()
@@ -123,10 +123,4 @@ def hacer_pregunta_pygame(pantalla, pregunta_dict):
 
     return resultado
 
-
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
 
